@@ -1,0 +1,356 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - banner "Header" [ref=e4]:
+      - generic [ref=e5]:
+        - banner [ref=e6]:
+          - generic [ref=e7]:
+            - img "Indian railway logo" [ref=e9]
+            - img "IRCTC Logo" [ref=e11]
+          - generic [ref=e14] [cursor=pointer]: 
+          - text:   
+        - text:             
+    - generic [ref=e16]:
+      - generic [ref=e20]:
+        - generic [ref=e23]:
+          - generic:
+            - generic [ref=e24]:
+              - img "Pnr Icon" [ref=e26]
+              - link "PNR Status opens a new window" [ref=e27] [cursor=pointer]:
+                - /url: http://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html?locale=en
+                - generic [ref=e28]: PNR STATUS
+            - generic [ref=e29]:
+              - img "Pnr Icon" [ref=e31]
+              - link "Reservation Chart. Website will be opened in new tab" [ref=e32] [cursor=pointer]:
+                - /url: https://www.irctc.co.in/online-charts/
+                - generic [ref=e33]: CHARTS / VACANCY
+          - generic [ref=e34]:
+            - generic [ref=e37]: BOOK TICKET
+            - generic [ref=e38]:
+              - generic [ref=e39]:
+                - generic [ref=e41]:
+                  - generic [ref=e43]: 
+                  - searchbox "Enter From station. Input is Mandatory." [ref=e46]
+                  - generic "Enter From station. Input is Mandatory.": From
+                  - generic:
+                    - generic [ref=e48] [cursor=pointer]: 
+                    - text: 
+                - generic [ref=e50]:
+                  - generic [ref=e52]: 
+                  - searchbox "Enter To station. Input is Mandatory." [ref=e55]
+                  - generic: To
+              - generic [ref=e56]:
+                - generic [ref=e58]:
+                  - generic [ref=e60]: 
+                  - generic "Enter Journey Date. Formate D.D./.M.M./.Y.Y.Y.Y. Input is Mandatory." [ref=e61]:
+                    - textbox [ref=e63]: 13/05/2026
+                  - generic: DD/MM/YYYY *
+                - generic [ref=e65]:
+                  - generic [ref=e67]: 
+                  - generic [ref=e69] [cursor=pointer]:
+                    - generic [ref=e70]:
+                      - listbox "All Classes"
+                    - generic [ref=e72]: All Classes
+                    - button "" [ref=e73]:
+                      - generic [ref=e74]: 
+              - generic [ref=e76]:
+                - generic [ref=e78]: 
+                - generic [ref=e81] [cursor=pointer]:
+                  - generic [ref=e82]:
+                    - listbox "GENERAL"
+                  - generic [ref=e84]: GENERAL
+                  - button "" [ref=e85]:
+                    - generic [ref=e86]: 
+              - generic [ref=e88]:
+                - generic [ref=e89]:
+                  - checkbox "Check for DIVYAANG Concession Booking." [ref=e90]
+                  - generic [ref=e91] [cursor=pointer]: Person With Disability Concession
+                - generic [ref=e92]:
+                  - checkbox "Check to fetch trains runs on other days than you are searching for." [ref=e93]
+                  - generic [ref=e94] [cursor=pointer]: Flexible With Date
+                - generic [ref=e95]:
+                  - checkbox "Check for pass Booking" [disabled] [ref=e96]
+                  - generic [ref=e97] [cursor=pointer]: Railway Pass Concession
+              - button "Search Trains" [ref=e100] [cursor=pointer]
+          - region [ref=e101]
+        - generic [ref=e103]:
+          - generic [ref=e104]: INDIAN RAILWAYS
+          - text: SafetySecurityPunctuality
+        - iframe [ref=e344]:
+          - link [ref=f36e2] [cursor=pointer]:
+            - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsvBeG8ZdY3jLdw61RSzzuJd1TJ5fm5UmJBIx7Rbh5wDSWlnIJoAdnvAwXmSoGtNCZv1Nt6HO69w2xvQo_QRX3dMe5LSnt9fbUvCeEsXfRICXRi9CW-XrISQkXSh_zRzI17pHS0z8j4gutwtLi3ejMpv7yxmqA6184aQQzK0RY21IpxXYnfsXO5j0LmhJT_d5FomdFi03ASHQRS-toBvW2XIdE6iarUoENH9ulIuBuISU2FCI3hNyDjPU_dGGa6IOdBeXFcmM-pVGK1Nk5ChNnpXB9zr9m5OEQRLxSZYNHfYeX3XQMLh9F111r6RkK1t8ybSxJF_VtvzPVNdBh7DnTUj6nstGW36KZ5Acg3JAwms2d_vFZjgwZG1c6pA7jobzcV4XI9XLz7GN8Uo2YEj5tl2H0KkKhVnOBxd&sai=AMfl-YQXc7iGRPaATpTNS9tbWh3cH_mWeBcAaAAxkvieE0ju53uR5nMDcxfeCIFrtxzhPwi-6Bp1lRll115yCcCBIqy8axqN7Fc72kCkmlKa5ETkYO0WfUaVAykmgeYtSLGsPJmTbF4c14HdmSeAmhlyxyldhB4b3-IM888Wal2llbi_AEuPx500XAfBi5BQzmYDEFewr2cmMaeOhQxHzJtIMsa3Ia2X8qLKwcCtWDPUcZJU_jhaYQwctuYABY18PEDzHrT6ZPmT1pYhpCzntJMsqxYe_Zs1hSfTNmOgG4MTnPGZerqs3-t33SsaRqaXFHq8ZE_AyU67&sig=Cg0ArKJSzPMrhd0Jpdg8&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://www.irctctourism.com/pacakage_description%3FpackageCode%3DNZBG79
+        - generic [ref=e110]:
+          - heading "Have you not found the right one? Find a service suitable for you here." [level=2] [ref=e111]:
+            - text: Have you not found the right one?
+            - text: Find a service suitable for you here.
+          - list [ref=e112]:
+            - listitem [ref=e113]:
+              - link "Flight opens a new window" [ref=e114] [cursor=pointer]:
+                - /url: https://www.air.irctc.co.in/
+                - generic [ref=e116]: FLIGHTS
+            - listitem [ref=e117]:
+              - link "HOTELS" [ref=e118] [cursor=pointer]:
+                - /url: https://www.hotels.irctc.co.in
+                - generic [ref=e120]: HOTELS
+            - listitem [ref=e121]:
+              - link " RAIL DRISHTI" [ref=e122] [cursor=pointer]:
+                - /url: https://raildrishti.indianrailways.gov.in/
+                - generic [ref=e123]: 
+                - generic [ref=e124]: RAIL DRISHTI
+            - listitem [ref=e125]:
+              - link "E-CATERING" [ref=e126] [cursor=pointer]:
+                - /url: https://www.ecatering.irctc.co.in/
+                - generic [ref=e128]: E-CATERING
+            - listitem [ref=e129]:
+              - link " BUS" [ref=e130] [cursor=pointer]:
+                - /url: https://www.bus.irctc.co.in/home
+                - generic [ref=e131]: 
+                - generic [ref=e132]: BUS
+          - list [ref=e133]:
+            - listitem [ref=e134]:
+              - link "HOLIDAY PACKAGES" [ref=e135] [cursor=pointer]:
+                - /url: https://www.irctctourism.com/tourpacakage_search?searchKey=&tagType=&travelType=&category=
+                - generic [ref=e137]: HOLIDAY PACKAGES
+            - listitem [ref=e138]:
+              - link "TOURIST TRAIN" [ref=e139] [cursor=pointer]:
+                - /url: https://www.irctctourism.com/bharatgaurav
+                - generic [ref=e141]: TOURIST TRAIN
+            - listitem [ref=e142]:
+              - link "HILL RAILWAYS" [ref=e143] [cursor=pointer]:
+                - /url: https://www.irctctourism.com/gallery/
+                - generic [ref=e145]: HILL RAILWAYS
+            - listitem [ref=e146]:
+              - link "CHARTER TRAIN" [ref=e147] [cursor=pointer]:
+                - /url: https://www.ftr.irctc.co.in/ftr/
+                - generic [ref=e149]: CHARTER TRAIN
+            - listitem [ref=e150]:
+              - link "GALLERY" [ref=e151] [cursor=pointer]:
+                - /url: https://www.irctctourism.com/gallery/
+                - generic [ref=e153]: GALLERY
+        - generic [ref=e156]:
+          - heading "HOLIDAYS" [level=2] [ref=e157]
+          - generic [ref=e158]:
+            - generic [ref=e160]:
+              - img "Maharajas Express" [ref=e162]
+              - generic [ref=e163]:
+                - heading "Maharajas' Express" [level=3] [ref=e164]
+                - paragraph [ref=e165]: Redefining Royalty, Luxury and Comfort, Maharajas' express takes you on a sojourn to the era of bygone stately splendour of princely states. Sylvan furnishings, elegant ambience and modern amenities are amalgamated for an “Experience Unsurpassed”. It has been a winner of “World’s Leading Luxury train” by World Travel Awards consecutively for last six years.
+                - link "More info about Maharaja's Express" [ref=e166] [cursor=pointer]:
+                  - /url: http://www.the-maharajas.com/
+                  - strong [ref=e167]: Read More
+                  - generic [ref=e168]: 
+            - generic [ref=e170]:
+              - img "International Packages" [ref=e172]
+              - generic [ref=e173]:
+                - heading "International Packages" [level=3] [ref=e174]
+                - paragraph [ref=e175]: Best deals in International Holiday packages, handpicked by IRCTC, for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA, Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas medical insurance to give you a hassle-free and memorable experience.
+                - link "Read More " [ref=e176] [cursor=pointer]:
+                  - /url: https://www.irctctourism.com/#/tourpacakage_search?searchKey=&tagType=&travelType=International&sector=All
+                  - strong [ref=e177]: Read More
+                  - generic [ref=e178]: 
+            - generic [ref=e180]:
+              - img "Domestic Air Packages" [ref=e182]
+              - generic [ref=e183]:
+                - heading "Domestic Air Packages" [level=3] [ref=e184]
+                - paragraph [ref=e185]: Be it the spiritual devotee seeking blessings of Tirupati, Shirdi or Mata Vaishno Devi or the leisure traveller wanting to relish the Blue mountains of North East, Sand-dunes of Rajasthan, Hamlets of Ladakh, Wonders of Himalayas, Serene lakes or Picturesque Islands, IRCTC has it all. Discover India through IRCTC!
+                - link "Read More " [ref=e186] [cursor=pointer]:
+                  - /url: https://www.irctctourism.com/#/tourpacakage_search?searchKey=&tagType=&travelType=Domestic&sector=All
+                  - strong [ref=e187]: Read More
+                  - generic [ref=e188]: 
+            - generic [ref=e190]:
+              - img "Tourist Trains" [ref=e192]
+              - generic [ref=e193]:
+                - heading "Bharat Gaurav Tourist Train" [level=3] [ref=e194]
+                - paragraph [ref=e195]: IRCTC operates Bharat Gaurav Tourist Train having AC III-Tier accommodation on train specially designed to promote domestic tourism in India. This train runs on various theme based circuits covering pilgrimage and heritage destinations in its itinerary on a 5 days to 20 days trip and showcase India’s rich cultural heritage.
+                - link "Read More " [ref=e196] [cursor=pointer]:
+                  - /url: https://www.irctctourism.com/bharatgaurav
+                  - strong [ref=e197]: Read More
+                  - generic [ref=e198]: 
+            - generic [ref=e200]:
+              - img "Rail/ Land Tour Packages" [ref=e202]
+              - generic [ref=e203]:
+                - heading "Rail Tour Packages" [level=3] [ref=e204]
+                - paragraph [ref=e205]: IRCTC offers Exclusive Rail tour packages with confirmed train tickets, sight-seeing and meals for enchanting Nilgiri Mountains, Darjeeling, Kullu Manali, Kashmir, Gangtok or divine tours of Mata Vaishno Devi, Rameswaram, Madurai, Shirdi, Tirupati etc. Holiday packages/ Land packages to these destinations are also available.
+                - link "Read More " [ref=e206] [cursor=pointer]:
+                  - /url: https://www.irctctourism.com/#/tourpkgs
+                  - strong [ref=e207]: Read More
+                  - generic [ref=e208]: 
+      - dialog:
+        - dialog:
+          - dialog "LOGIN Dialog opened" [ref=e380]:
+            - text: 
+            - generic [ref=e381]:
+              - generic [ref=e382] [cursor=pointer]: 
+              - form:
+                - generic:
+                  - generic [ref=e384]:
+                    - strong [ref=e387]: LOGIN
+                    - generic [ref=e389]:
+                      - textbox "User Name" [ref=e391]
+                      - generic [ref=e392]:
+                        - textbox "Password" [ref=e393]
+                        - generic [ref=e394] [cursor=pointer]: 
+                      - link "FORGOT ACCOUNT DETAILS?" [ref=e396] [cursor=pointer]:
+                        - /url: "#"
+                        - strong [ref=e398]: FORGOT ACCOUNT DETAILS?
+                      - generic [ref=e400]:
+                        - checkbox "Booking using OTP" [ref=e401]
+                        - generic [ref=e402] [cursor=pointer]: Visually impaired users may select this option to receive OTP instead of CAPTCHA
+                      - button "SIGN IN" [active] [ref=e404] [cursor=pointer]
+                    - generic [ref=e405]:
+                      - link "REGISTER" [ref=e406] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e407]: REGISTER
+                      - link "AGENT LOGIN" [ref=e408] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e409]: AGENT LOGIN
+                    - iframe [ref=e412]:
+                      - link [ref=f39e2] [cursor=pointer]:
+                        - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjss2dBbubkwtPtT8s-znjdkN-elW6MkEX7IEUHipaEMVIyDuY5QXjZqxyik6ijXKW5_CEjgZ76NszU9mr9lVAEX1AKsG6ppQGzieaH4OLZ5Z8HHSvEP6FRl6xeWEAUHrgqUX6L6FWbh2PVdFk9UZUsNXuZNq-zWT5TPdFinpf2r_pQDyNsKLg-fb2HapaIYG5muLUbAsX42OOE-EhF3ZnGkeF_kNf2XOFju0VCkjl2jx6iRd2PigjkN4OClTNPARl2ybWxJrhUfYt2xzzA3fe1IhdlX_JRgyRCDz_v9hMjPlJJlgO9wZx-UwfrQxztkLE_K73eTrgp0HVlaRj6MtQEVrrdTpZrbuZw1Xck8Pg9Aqi8hsbrBu0qp9cJTH78uGEN55XG92VUZ3XnT1cdF6PQgc0w4CQRidYfgEcBRUu4zfuU6QAgkKoMNk0rE&sai=AMfl-YSnpcCC2_MsxnQlHTidJQemEwyqhhDh_2W9DQVJGL6Yqjxw2ZH7pRWSyTDe8jvS2x-3ncQsjZKaS0TL9NyBPQlNXeNPzHYZbSAhPsJ1vTgfAiUw_IcFL67Ax-ONFGnTzWPIEg4m_Ntpxze74JNguRzgiDOSUQL25AWCQlVfXZXDKjF0oLaxdo6ouaR8rl497HqWdldmxGN4Mnx6zarclkrUMt8OeHcrKle99mLHc7HO6pZClYW2-YPXbsIZmx-y1wK1y8bBI-Uv0A_MKDOIocrTa6bhdgIv9U6OjQvy5ms7SwOoFvEj2A2UK0rpAgoFjQDrZfVrddRqvBv_O6wsFqevHltFqSKzsyf4gNcLmYA3nPIgcA5dEsc&sig=Cg0ArKJSzOijUPySWuwm&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://www.irctctourism.com/pacakage_description%3FpackageCode%3DNZBG78
+                  - iframe [ref=e418]:
+                    - link [ref=f38e2] [cursor=pointer]:
+                      - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjssRDA8L_xSmSERZgoy2YvYGb7Cyhckd-wsWCwlW6p4bs26PcBKJuD6zagEyMsBhWSuHCgK1oqUXg6Yl4V6Q7buXmLMLifQ2nxywNjcbPaRSYdK84p4vUNmZs69asmNO-EmbkRaOqPqf8nXb0PDMobVAHKzJa9FVN8cVlErp12oFbAeewqkMvrLCYrCrVdaN5KgbHNC-jOKuhKphfGaIpuYVStdH4vfVNVB0klM13JnA6s0si5UNr25U2zWydq3CSOq6uIHrgv9J5aG0PWW7B2eIwm77s88xssKXrDPamag7H9s2sgcajMtSrvVUOvnw5MK0PdKTW5F17R4raWu38M43C9VDp_CzffMuXjRl9LV_Kx5F1OQe6ztnNnED5zkZ8l0hv0-WqLT9JNoYSMDckHN3kWmHrbLKeQUyZVVd&sai=AMfl-YSHkr_QwED-n10FlT239VODjy9J_h_tN3WVvZ2UhUKsD3MpG5vCqQg8BsWXm9vTWyuDM2J_0W--CZjaqkt8qQZEwOt1J7KY9DxYraqVK8HSEgp27et-ETYb2mexeTuS1N_cNmafoJ7UnnLx3TApOlWH7Hwf9dx8T0vCD4lWFzyrUYCkJgUUVOcMr0z_JhRWait1xOhpTl66sM2cdCGjh-mygyC3YegHeb54OlIBtmBGg5IervPsK5DAbEyb9xiSf4kGXiOtTv8j2rO-UlY6Ao9Rwzns-XnJYeCV8V17WxsykK6Yf-Gxnfd0v4nQvJ8ao00SHPjI-P70uJaiGokZfOrHvLBotDlMlEqHHR687O8zbfza5vwYMxM&sig=Cg0ArKJSzAxy8CLkBfYa&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://www.irctctourism.com/pacakage_description%3FpackageCode%3DNZBG78
+    - generic [ref=e213]:
+      - contentinfo [ref=e215]:
+        - text: Get Connected with us on social networks
+        - generic [ref=e216]:
+          - link "I.R.C.T.C. Official instagram page. opens a new windows" [ref=e217] [cursor=pointer]:
+            - /url: https://www.facebook.com/IRCTCofficial/
+            - generic [ref=e218]: 
+          - link "I.R.C.T.C. Official whatsapp page. opens a new windows" [ref=e219] [cursor=pointer]:
+            - /url: https://whatsapp.com/channel/0029Va4wpCW84OmKdPNQi41P
+            - img [ref=e221]
+          - link "I.R.C.T.C. Official youtube page. opens a new windows" [ref=e222] [cursor=pointer]:
+            - /url: https://youtube.com/c/IRCTCOFFICIAL
+            - generic [ref=e223]: 
+          - link "I.R.C.T.C. Official facebook page. opens a new windows" [ref=e224] [cursor=pointer]:
+            - /url: https://instagram.com/irctc.official?igshid=yyg5byow704l
+            - generic [ref=e225]: 
+          - link "I.R.C.T.C. Official linkedin page. opens a new windows" [ref=e226] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/irctcofficial
+            - generic [ref=e227]: 
+          - link "I.R.C.T.C. Official telegram page. opens a new windows" [ref=e228] [cursor=pointer]:
+            - /url: https://t.me/IRCTC_Official
+            - generic [ref=e229]: 
+          - link "I.R.C.T.C. Official pinterest page. opens a new windows" [ref=e230] [cursor=pointer]:
+            - /url: https://in.pinterest.com/irctcofficial/
+            - generic [ref=e231]: 
+          - link "I.R.C.T.C. Official tumblr page. opens a new windows" [ref=e232] [cursor=pointer]:
+            - /url: https://irctcofficial.tumblr.com/
+            - generic [ref=e233]: 
+          - link "I.R.C.T.C. Official Koo page. opens a new windows" [ref=e234] [cursor=pointer]:
+            - /url: https://www.kooapp.com/profile/irctcofficial
+            - img [ref=e236]
+          - link "I.R.C.T.C. Official twitter page. opens a new windows" [ref=e237] [cursor=pointer]:
+            - /url: https://twitter.com/IRCTCofficial
+            - generic [ref=e238]: 
+      - generic [ref=e242]:
+        - generic [ref=e244]:
+          - button "IRCTC Trains " [ref=e245] [cursor=pointer]:
+            - generic [ref=e246]:
+              - text: IRCTC Trains
+              - generic [ref=e247]: 
+          - button "General Information " [ref=e248] [cursor=pointer]:
+            - generic [ref=e249]:
+              - text: General Information
+              - generic [ref=e250]: 
+          - button "Important Information " [ref=e251] [cursor=pointer]:
+            - generic [ref=e252]:
+              - text: Important Information
+              - generic [ref=e253]: 
+          - button "Agents " [ref=e254] [cursor=pointer]:
+            - generic [ref=e255]:
+              - text: Agents
+              - generic [ref=e256]: 
+          - button "Enquiries " [ref=e257] [cursor=pointer]:
+            - generic [ref=e258]:
+              - text: Enquiries
+              - generic [ref=e259]: 
+        - generic [ref=e261]:
+          - button "How To " [ref=e262] [cursor=pointer]:
+            - generic [ref=e263]:
+              - text: How To
+              - generic [ref=e264]: 
+          - button "IRCTC Official App " [ref=e265] [cursor=pointer]:
+            - generic [ref=e266]:
+              - text: IRCTC Official App
+              - generic [ref=e267]: 
+          - button "Advertise with us " [ref=e268] [cursor=pointer]:
+            - generic [ref=e269]:
+              - text: Advertise with us
+              - generic [ref=e270]: 
+          - button "Refund Rules " [ref=e271] [cursor=pointer]:
+            - generic [ref=e272]:
+              - text: Refund Rules
+              - generic [ref=e273]: 
+          - button "Person With Disability Facilities " [ref=e274] [cursor=pointer]:
+            - generic [ref=e275]:
+              - text: Person With Disability Facilities
+              - generic [ref=e276]: 
+        - generic [ref=e278]:
+          - button "E-Wallet " [ref=e279] [cursor=pointer]:
+            - generic [ref=e280]:
+              - text: E-Wallet
+              - generic [ref=e281]: 
+          - button "IRCTC Co-branded Card Benefits " [ref=e282] [cursor=pointer]:
+            - generic [ref=e283]:
+              - text: IRCTC Co-branded Card Benefits
+              - generic [ref=e284]: 
+          - button "IRCTC-iPAY Payment Gateway " [ref=e285] [cursor=pointer]:
+            - generic [ref=e286]:
+              - text: IRCTC-iPAY Payment Gateway
+              - generic [ref=e287]: 
+          - button "IRCTC Zone " [ref=e288] [cursor=pointer]:
+            - generic [ref=e289]:
+              - text: IRCTC Zone
+              - generic [ref=e290]: 
+          - button "DMRC Ticket Booking at IRCTC " [ref=e291] [cursor=pointer]:
+            - generic [ref=e292]:
+              - text: DMRC Ticket Booking at IRCTC
+              - generic [ref=e293]: 
+        - generic [ref=e295]:
+          - button "For Newly Migrated Agents " [ref=e297] [cursor=pointer]:
+            - generic [ref=e298]:
+              - text: For Newly Migrated Agents
+              - generic [ref=e299]: 
+          - button "Mobile Zone " [ref=e300] [cursor=pointer]:
+            - generic [ref=e301]:
+              - text: Mobile Zone
+              - generic [ref=e302]: 
+          - button "Policies " [ref=e303] [cursor=pointer]:
+            - generic [ref=e304]:
+              - text: Policies
+              - generic [ref=e305]: 
+          - button "Ask Disha ChatBot " [ref=e306] [cursor=pointer]:
+            - generic [ref=e307]:
+              - text: Ask Disha ChatBot
+              - generic [ref=e308]: 
+          - button "About us " [ref=e309] [cursor=pointer]:
+            - generic [ref=e310]:
+              - text: About us
+              - generic [ref=e311]: 
+        - generic [ref=e314]:
+          - button "Help & Support" [ref=e315] [cursor=pointer]
+          - button "E-Pantry " [ref=e316] [cursor=pointer]:
+            - generic [ref=e317]:
+              - text: E-Pantry
+              - generic [ref=e318]: 
+      - generic [ref=e321]:
+        - img "Secured Payment Partner" [ref=e324]
+        - generic [ref=e326]:
+          - paragraph [ref=e327]: Copyright Â© 2026 - www.irctc.co.in. All Rights Reserved
+          - paragraph [ref=e328]:
+            - text: Designed and Hosted by
+            - strong [ref=e329]:
+              - link "CRIS" [ref=e330] [cursor=pointer]:
+                - /url: http://cris.org.in
+          - paragraph [ref=e331]:
+            - strong [ref=e332]:
+              - link "Compatible Browsers link opens a new windows" [ref=e333] [cursor=pointer]:
+                - /url: http://contents.irctc.co.in/en/BetaSiteCompatibleBrowser.html
+                - text: Compatible Browsers
+          - paragraph [ref=e345]: DM5MS6
+  - generic [ref=e337] [cursor=pointer]: Easy Booking on AskDisha
+  - complementary "AskDisha Chat Assistant" [ref=e338]:
+    - generic [ref=e339] [cursor=pointer]:
+      - img "Open Disha chat" [ref=e340]
+      - img "Minimize chat" [ref=e341]

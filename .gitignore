@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Claude / AI tooling
+.claude/
+CLAUDE.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.envrc
+
+# Logs
+*.log
+
+# Local databases
+*.sqlite
+*.db
+
+# IDEs
+.vscode/
+.idea/
