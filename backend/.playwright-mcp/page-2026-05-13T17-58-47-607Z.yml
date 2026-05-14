@@ -1,0 +1,42 @@
+- generic [active]:
+  - table [ref=e2]:
+    - rowgroup [ref=e3]:
+      - row [ref=e4]:
+        - cell [ref=e5]:
+          - img [ref=e6]
+        - cell [ref=e7]
+        - cell [ref=e8]:
+          - img [ref=e9]
+  - generic [ref=e11]:
+    - list
+  - generic [ref=e12]:
+    - table [ref=e13]:
+      - rowgroup [ref=e14]:
+        - row "DOWNTIME MESSAGE" [ref=e15]:
+          - cell "DOWNTIME MESSAGE" [ref=e16]:
+            - heading "DOWNTIME MESSAGE" [level=3] [ref=e17]
+        - row [ref=e18]:
+          - cell [ref=e19]:
+            - heading [level=3]
+        - row "DUE TO MAINTENANCE ACTIVITY E-TICKETING SERVICE WILL NOT BE AVAILABLE FROM 13th May 2026 23:00 HRS TO 14th May 2026 02:00 HRS IST (GMT + 05:30). INCONVENIENCE CAUSED IS DEEPLY REGRETTED. FOR CANCELLATION/FILE TDR, PLEASE CALL AT CUSTOMER CARE NO. 14646/08044647999/08035734999 OR MAIL AT etickets@irctc.co.in." [ref=e20]:
+          - cell "DUE TO MAINTENANCE ACTIVITY E-TICKETING SERVICE WILL NOT BE AVAILABLE FROM 13th May 2026 23:00 HRS TO 14th May 2026 02:00 HRS IST (GMT + 05:30). INCONVENIENCE CAUSED IS DEEPLY REGRETTED. FOR CANCELLATION/FILE TDR, PLEASE CALL AT CUSTOMER CARE NO. 14646/08044647999/08035734999 OR MAIL AT etickets@irctc.co.in." [ref=e21]:
+            - generic [ref=e22]:
+              - text: DUE TO MAINTENANCE ACTIVITY E-TICKETING SERVICE WILL NOT BE AVAILABLE FROM
+              - generic [ref=e23]:
+                - text: "13"
+                - superscript [ref=e24]: th
+                - text: May 2026 23:00 HRS TO 14
+                - superscript [ref=e25]: th
+                - text: May 2026 02:00 HRS IST (GMT + 05:30).
+              - text: INCONVENIENCE CAUSED IS DEEPLY REGRETTED.
+              - generic [ref=e26]: FOR CANCELLATION/FILE TDR, PLEASE CALL AT CUSTOMER CARE NO. 14646/08044647999/08035734999 OR MAIL AT etickets@irctc.co.in.
+        - row [ref=e27]:
+          - cell [ref=e28]
+        - row "INCASE YOU ARE GETTING THE DOWNTIME MESSAGE AFTER THE TIME MENTIONED ABOVE, KINDLY CLOSE ALL THE BROWSER WINDOWS, OPEN A NEW ONE AND DELETE TEMPORARY INTERNET FILES AS MENTIONED BELOW." [ref=e29]:
+          - cell "INCASE YOU ARE GETTING THE DOWNTIME MESSAGE AFTER THE TIME MENTIONED ABOVE, KINDLY CLOSE ALL THE BROWSER WINDOWS, OPEN A NEW ONE AND DELETE TEMPORARY INTERNET FILES AS MENTIONED BELOW." [ref=e30]:
+            - generic [ref=e31]: INCASE YOU ARE GETTING THE DOWNTIME MESSAGE AFTER THE TIME MENTIONED ABOVE, KINDLY CLOSE ALL THE BROWSER WINDOWS, OPEN A NEW ONE AND DELETE TEMPORARY INTERNET FILES AS MENTIONED BELOW.
+        - row [ref=e32]:
+          - cell [ref=e33]
+        - row "eg. For Internet Explorer, Go to Tools menu » Internet options » delete cookies, delete files, clear history and click ok." [ref=e34]:
+          - cell "eg. For Internet Explorer, Go to Tools menu » Internet options » delete cookies, delete files, clear history and click ok." [ref=e35]
+    - generic [ref=e39]: Copyright © 2026 - www.irctc.co.in. All Rights Reserved

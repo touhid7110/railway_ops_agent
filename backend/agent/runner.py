@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 MCP_CONFIG = {
     "playwright": {
         "command": "npx",
-        "args": ["@playwright/mcp@latest", "--browser=chrome", "--caps=vision"],
+        "args": ["@playwright/mcp@latest", "--browser=chrome", "--caps=vision","--cdp-endpoint=http://localhost:9222"],
         "transport": "stdio",
     }
 }

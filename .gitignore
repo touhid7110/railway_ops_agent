@@ -7,6 +7,7 @@
 !.env.example
 
 # Claude / AI tooling
+openspec/
 .claude/
 CLAUDE.md
 
@@ -28,3 +29,4 @@ venv/
 # IDEs
 .vscode/
 .idea/
+

@@ -26,12 +26,13 @@ def build_booking_graph(tools: list, checkpointer):
 
     settings = get_settings()
     from langchain_groq import ChatGroq
-    agent_llm = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct",api_key=settings.groq_api_key, temperature=0.2)
+    print(settings.GROQ_API_KEY)
+    agent_llm = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct",api_key=settings.GROQ_API_KEY, temperature=0.2)
 
     tools_node = ToolNode(tools)
 
     graph = StateGraph(BookingAgentState)
-    graph.add_node("agent", partial(agent_node, llm=llm, tools=tools))
+    graph.add_node("agent", partial(agent_node, llm=agent_llm, tools=tools))
     graph.add_node("tools", tools_node)
 
     graph.set_entry_point("agent")

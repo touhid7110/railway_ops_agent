@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Search, ArrowRight, Calendar, Plus, Trash2, Lock, User } from 'lucide-react';
-import { createJob } from '../api';
+import { useState, useEffect } from 'react';
+import { Search, ArrowRight, Calendar, Trash2, Lock, User, Check } from 'lucide-react';
+import { createJob, fetchPassengers, addPassenger as apiAddPassenger } from '../api';
 
 const QUOTA_OPTIONS = ['GENERAL', 'TATKAL', 'PREMIUM_TATKAL'];
 const CLASS_OPTIONS = ['1A', '2A', '3A', 'SL', 'CC', 'EC'];
@@ -56,22 +56,77 @@ export default function BookingSearch({ onNavigate, setActiveJobId }) {
     notify_email: '',
   });
   const [passengers, setPassengers] = useState([]);
-  const [showAddForm, setShowAddForm] = useState(false);
   const [newP, setNewP] = useState({ name: '', age: '', id_type: 'Aadhaar', id_number: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // Task 1.1 — saved passengers from API
+  const [savedPassengers, setSavedPassengers] = useState([]);
+  // Task 1.2 — track which saved passenger IDs are in the active roster
+  const [selectedSavedIds, setSelectedSavedIds] = useState(new Set());
+  // Task 2.1 — tab state
+  const [rosterTab, setRosterTab] = useState('roster');
+  // Task 4.1 — save-to-roster toggle
+  const [saveToRoster, setSaveToRoster] = useState(false);
+  const [rosterSaveError, setRosterSaveError] = useState('');
+
+  // Task 1.1 — fetch on mount, silently ignore errors
+  useEffect(() => {
+    fetchPassengers().then(setSavedPassengers).catch(() => {});
+  }, []);
+
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }));
   const swap = () => setForm(f => ({ ...f, source: f.destination, destination: f.source }));
 
-  const addPassenger = () => {
-    if (!newP.name || !newP.age || !newP.id_number) return;
-    setPassengers(ps => [...ps, { ...newP, age: parseInt(newP.age) }]);
-    setNewP({ name: '', age: '', id_type: 'Aadhaar', id_number: '' });
-    setShowAddForm(false);
+  // Task 3.2 — toggle a saved passenger in/out of the active roster
+  const toggleSavedPassenger = (p) => {
+    if (selectedSavedIds.has(p.id)) {
+      setPassengers(ps => ps.filter(r => r.id_number !== p.id_number));
+      setSelectedSavedIds(ids => { const next = new Set(ids); next.delete(p.id); return next; });
+    } else {
+      // Task 3.2 dedup: skip if id_number already in active roster
+      if (!passengers.some(r => r.id_number === p.id_number)) {
+        setPassengers(ps => [...ps, { name: p.name, age: p.age, id_type: p.id_type, id_number: p.id_number }]);
+      }
+      setSelectedSavedIds(ids => { const next = new Set(ids); next.add(p.id); return next; });
+    }
   };
 
-  const removePassenger = (i) => setPassengers(ps => ps.filter((_, j) => j !== i));
+  // Tasks 4.3–4.5 — add passenger (with optional API save)
+  const handleAddPassenger = async () => {
+    if (!newP.name || !newP.age || !newP.id_number) return;
+    const pData = { name: newP.name, age: parseInt(newP.age), id_type: newP.id_type, id_number: newP.id_number };
+    setRosterSaveError('');
+
+    if (saveToRoster) {
+      try {
+        const saved = await apiAddPassenger(pData);
+        setSavedPassengers(ps => [...ps, saved]);
+        setSelectedSavedIds(ids => { const next = new Set(ids); next.add(saved.id); return next; });
+        setPassengers(ps => [...ps, pData]);
+      } catch {
+        setRosterSaveError('Failed to save to roster — added for this session only.');
+        setPassengers(ps => [...ps, pData]);
+      }
+    } else {
+      // Task 4.4 — ephemeral only
+      setPassengers(ps => [...ps, pData]);
+    }
+
+    // Task 4.5 — reset form
+    setNewP({ name: '', age: '', id_type: 'Aadhaar', id_number: '' });
+    setSaveToRoster(false);
+  };
+
+  // Task 5.2 — remove passenger and clear selectedSavedIds if applicable
+  const removePassenger = (i) => {
+    const p = passengers[i];
+    const savedMatch = savedPassengers.find(s => s.id_number === p.id_number);
+    if (savedMatch) {
+      setSelectedSavedIds(ids => { const next = new Set(ids); next.delete(savedMatch.id); return next; });
+    }
+    setPassengers(ps => ps.filter((_, j) => j !== i));
+  };
 
   const launch = async () => {
     if (!form.source || !form.destination || !form.date) {
@@ -264,45 +319,74 @@ export default function BookingSearch({ onNavigate, setActiveJobId }) {
         </div>
 
         {/* ── RIGHT: PERSONNEL_ROSTER ── */}
-        <div className="glass hud-border rounded p-5 space-y-4 flex flex-col">
+        <div className="glass hud-border rounded p-5 flex flex-col gap-4">
           <p className="font-mono text-[10px] tracking-widest" style={{ color: 'var(--on-surface-variant)' }}>
             PERSONNEL_ROSTER
           </p>
 
-          {/* Passenger list */}
-          <div className="space-y-2">
-            {passengers.length === 0 && !showAddForm && (
-              <p className="font-mono text-[10px]" style={{ color: 'var(--on-surface-variant)' }}>
-                No passengers added yet.
-              </p>
-            )}
-            {passengers.map((p, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 rounded"
-                style={{ background: 'var(--surface-container-high)', border: '1px solid var(--outline-variant)', padding: '10px 12px' }}
+          {/* Task 2.2 — tab pills */}
+          <div className="flex gap-2">
+            {[
+              { id: 'roster', label: '[ FROM ROSTER ]' },
+              { id: 'add', label: '[ ADD NEW ]' },
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setRosterTab(tab.id)}
+                className="font-mono text-[10px] tracking-wide font-bold transition-all"
+                style={{
+                  padding: '6px 12px',
+                  borderRadius: 4,
+                  background: rosterTab === tab.id ? 'rgba(0,242,255,0.15)' : 'var(--surface-container-high)',
+                  color: rosterTab === tab.id ? 'var(--primary-container)' : 'var(--on-surface-variant)',
+                  border: `1px solid ${rosterTab === tab.id ? 'rgba(0,242,255,0.4)' : 'var(--outline-variant)'}`,
+                }}
               >
-                <div
-                  className="w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-bold flex-shrink-0"
-                  style={{ background: 'rgba(0,242,255,0.1)', color: 'var(--primary-container)' }}
-                >
-                  {i + 1}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-mono text-xs font-bold" style={{ color: 'var(--on-surface)' }}>{p.name}</p>
-                  <p className="font-mono text-[10px]" style={{ color: 'var(--on-surface-variant)' }}>
-                    Age {p.age} · {p.id_type}: {p.id_number}
-                  </p>
-                </div>
-                <button onClick={() => removePassenger(i)} style={{ color: '#ffb4ab' }}>
-                  <Trash2 size={12} />
-                </button>
-              </div>
+                {tab.label}
+              </button>
             ))}
           </div>
 
-          {/* Add passenger inline form */}
-          {showAddForm && (
+          {/* Task 2.3 — FROM ROSTER tab */}
+          {rosterTab === 'roster' && (
+            <div className="space-y-2">
+              {savedPassengers.length === 0 ? (
+                /* Task 3.3 — empty state */
+                <p className="font-mono text-[10px]" style={{ color: 'var(--on-surface-variant)' }}>
+                  No saved passengers yet — add one below or in Settings.
+                </p>
+              ) : (
+                savedPassengers.map(p => {
+                  const isSelected = selectedSavedIds.has(p.id);
+                  return (
+                    /* Task 3.1 — clickable row with teal highlight + checkmark */
+                    <button
+                      key={p.id}
+                      onClick={() => toggleSavedPassenger(p)}
+                      className="w-full flex items-center gap-3 rounded text-left transition-all"
+                      style={{
+                        background: isSelected ? 'rgba(0,242,255,0.08)' : 'var(--surface-container-high)',
+                        border: `1px solid ${isSelected ? 'rgba(0,242,255,0.4)' : 'var(--outline-variant)'}`,
+                        borderLeft: isSelected ? '3px solid var(--primary-container)' : undefined,
+                        padding: '10px 12px',
+                      }}
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="font-mono text-xs font-bold" style={{ color: 'var(--on-surface)' }}>{p.name}</p>
+                        <p className="font-mono text-[10px]" style={{ color: 'var(--on-surface-variant)' }}>
+                          Age {p.age} · {p.id_type}: {p.id_number}
+                        </p>
+                      </div>
+                      {isSelected && <Check size={12} style={{ color: 'var(--primary-container)', flexShrink: 0 }} />}
+                    </button>
+                  );
+                })
+              )}
+            </div>
+          )}
+
+          {/* Task 2.4 — ADD NEW tab */}
+          {rosterTab === 'add' && (
             <div className="rounded p-3 space-y-2" style={{ background: 'var(--surface-container-high)', border: '1px solid var(--outline-variant)' }}>
               <p className="font-mono text-[10px] tracking-widest" style={{ color: 'var(--on-surface-variant)' }}>NEW PASSENGER</p>
               <div className="grid grid-cols-2 gap-2">
@@ -337,33 +421,59 @@ export default function BookingSearch({ onNavigate, setActiveJobId }) {
                   style={{ background: 'var(--surface-container)', border: '1px solid var(--outline-variant)', color: 'var(--on-surface)', padding: '6px 10px' }}
                 />
               </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={addPassenger}
-                  className="px-3 py-1 rounded font-mono text-[10px] font-bold"
-                  style={{ background: 'var(--primary-container)', color: 'var(--on-primary)' }}
-                >
-                  ADD
-                </button>
-                <button
-                  onClick={() => setShowAddForm(false)}
-                  className="px-3 py-1 rounded font-mono text-[10px]"
-                  style={{ background: 'transparent', color: 'var(--on-surface-variant)', border: '1px solid var(--outline-variant)' }}
-                >
-                  CANCEL
-                </button>
-              </div>
+              {/* Task 4.2 — Save to roster checkbox */}
+              <label className="flex items-center gap-2 cursor-pointer" style={{ color: 'var(--on-surface-variant)' }}>
+                <input
+                  type="checkbox"
+                  checked={saveToRoster}
+                  onChange={e => setSaveToRoster(e.target.checked)}
+                  style={{ accentColor: 'var(--primary-container)' }}
+                />
+                <span className="font-mono text-[10px]">Save to roster</span>
+              </label>
+              {rosterSaveError && (
+                <p className="font-mono text-[10px]" style={{ color: '#ffb4ab' }}>{rosterSaveError}</p>
+              )}
+              <button
+                onClick={handleAddPassenger}
+                className="px-3 py-1 rounded font-mono text-[10px] font-bold"
+                style={{ background: 'var(--primary-container)', color: 'var(--on-primary)' }}
+              >
+                ADD
+              </button>
             </div>
           )}
 
-          {!showAddForm && (
-            <button
-              onClick={() => setShowAddForm(true)}
-              className="flex items-center gap-2 font-mono text-[10px] tracking-wide font-bold transition-all hover:scale-[1.02]"
-              style={{ background: 'transparent', color: 'var(--primary-container)', border: '1px dashed rgba(0,242,255,0.3)', borderRadius: 4, padding: '8px 12px' }}
-            >
-              <Plus size={12} /> ADD_NEW_PERSONNEL
-            </button>
+          {/* Task 5.1 — Active roster always visible below tabs */}
+          {passengers.length > 0 && (
+            <div className="space-y-2">
+              <p className="font-mono text-[10px] tracking-widest" style={{ color: 'var(--on-surface-variant)' }}>
+                ACTIVE_ROSTER
+              </p>
+              {passengers.map((p, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded"
+                  style={{ background: 'var(--surface-container-high)', border: '1px solid var(--outline-variant)', padding: '10px 12px' }}
+                >
+                  <div
+                    className="w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-bold flex-shrink-0"
+                    style={{ background: 'rgba(0,242,255,0.1)', color: 'var(--primary-container)' }}
+                  >
+                    {i + 1}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-mono text-xs font-bold" style={{ color: 'var(--on-surface)' }}>{p.name}</p>
+                    <p className="font-mono text-[10px]" style={{ color: 'var(--on-surface-variant)' }}>
+                      Age {p.age} · {p.id_type}: {p.id_number}
+                    </p>
+                  </div>
+                  <button onClick={() => removePassenger(i)} style={{ color: '#ffb4ab' }}>
+                    <Trash2 size={12} />
+                  </button>
+                </div>
+              ))}
+            </div>
           )}
 
           {/* Communication channels */}

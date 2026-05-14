@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     SMTP_APP_PASSWORD: str = ""
     SECRET_KEY: str = ""
     ENVIRONMENT: str = "development"
+    GROQ_API_KEY: str = ""
 
 
 @lru_cache
